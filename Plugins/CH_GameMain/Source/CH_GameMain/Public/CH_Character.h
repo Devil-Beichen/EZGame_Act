@@ -25,10 +25,9 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	//创建一个相机摇臂
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category=MyCamera)
-	USpringArmComponent * SpringArm;
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category=MyCamera)
+	USpringArmComponent* SpringArm;
 	//创建一个相机
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category=MyCamera)
-	UCameraComponent * Camera;
-	
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category=MyCamera)
+	UCameraComponent* Camera;
 };
