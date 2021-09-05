@@ -34,6 +34,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UFUNCTION(BlueprintCallable/*设置角色的速度*/,Category= CharacterMovement)
+	UFUNCTION(BlueprintCallable/*设置角色的速度*/, Category= CharacterMovement)
 	virtual void SetWalkSpeed(const float Speed);
+	
 };

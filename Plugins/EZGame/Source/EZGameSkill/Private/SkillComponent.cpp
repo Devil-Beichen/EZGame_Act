@@ -2,6 +2,9 @@
 
 
 #include "SkillComponent.h"
+//#include "Animation/AnimMontage.h"
+#include "GameFramework/Character.h"
+#include "SkillManager.h"
 
 // Sets default values for this component's properties
 USkillComponent::USkillComponent()
@@ -20,7 +23,6 @@ void USkillComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
 }
 
 
@@ -32,3 +34,19 @@ void USkillComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	// ...
 }
 
+void USkillComponent::OnCast()
+{
+	PlayAnimation();
+	OnCastImp();
+}
+
+void USkillComponent::PlayAnimation()
+{
+	if (!SkillManager && !SkillMontage)
+		return;
+	ACharacter* tCharacter = Cast<ACharacter>(GetOwner());
+	if (!tCharacter)
+		return;
+	tCharacter->PlayAnimMontage(SkillMontage);
+	SkillManager->NowAnimSkill = this;
+}
