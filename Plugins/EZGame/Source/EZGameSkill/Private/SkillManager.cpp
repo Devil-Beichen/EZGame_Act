@@ -19,11 +19,11 @@ USkillManager::USkillManager()
 void USkillManager::BeginPlay()
 {
 	Super::BeginPlay();
-	if(GetOwner()&&GetOwner()->InputComponent)
+	if (GetOwner() && GetOwner()->InputComponent)
 	{
-		GetOwner()->InputComponent->BindAction("MouseLeft",EInputEvent::IE_Pressed,this,&USkillManager::CastSkill1);
-		GetOwner()->InputComponent->BindAction("MouseRight",EInputEvent::IE_Pressed,this,&USkillManager::CastSkill2);
-		GetOwner()->InputComponent->BindAction("G",EInputEvent::IE_Pressed,this,&USkillManager::CastSkill3);
+		GetOwner()->InputComponent->BindAction("MouseLeft", EInputEvent::IE_Pressed, this, &USkillManager::CastSkill1);
+		GetOwner()->InputComponent->BindAction("MouseRight", EInputEvent::IE_Pressed, this, &USkillManager::CastSkill2);
+		GetOwner()->InputComponent->BindAction("G", EInputEvent::IE_Pressed, this, &USkillManager::CastSkill3);
 	}
 	// ...
 }
